@@ -26,6 +26,8 @@ public class MyFancyPdfInvoicesServlet extends HttpServlet {
 		}else if(request.getRequestURI().equalsIgnoreCase("/invoices")){
 			response.setContentType("application/json; charset=UTF-8");
 			response.getWriter().print("[]"); // vracamo prazni kao test
+
+			// ovo je za master
 		}
 
 	}
