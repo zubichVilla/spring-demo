@@ -33,7 +33,7 @@
                     <configuration>
                          <archive>
                               <manifest>
-                                   <mainClass>com.zube.ApplicationLauncher</mainClass>
+                                   <mainClass>com.zube.myfancypdfinvoices.ApplicationLauncher</mainClass>
                               </manifest>
                          </archive>
                     </configuration>
@@ -52,7 +52,7 @@
                             <configuration>
                                 <transformers>
                                     <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                        <mainClass>com.zube.ApplicationLauncher</mainClass>
+                                        <mainClass>com.zube.myfancypdfinvoices.ApplicationLauncher</mainClass>
                                     </transformer>
                                 </transformers>
                             </configuration>
@@ -68,6 +68,12 @@
                <artifactId>tomcat-embed-core</artifactId>
                <version>9.0.44</version>
           </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.0</version>
+        </dependency>
     </dependencies>
 
 </project>

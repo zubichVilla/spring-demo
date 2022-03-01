@@ -1,5 +1,6 @@
-package com.zube;
+package com.zube.myfancypdfinvoices;
 
+import com.zube.myfancypdfinvoices.web.MyFancyPdfInvoicesServlet;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.Wrapper;
