@@ -19,7 +19,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.zube.ApplicationLauncher</mainClass>
+              <mainClass>com.zube.myfancypdfinvoices.ApplicationLauncher</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -36,7 +36,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.zube.ApplicationLauncher</mainClass>
+                  <mainClass>com.zube.myfancypdfinvoices.ApplicationLauncher</mainClass>
                 </transformer>
               </transformers>
             </configuration>
