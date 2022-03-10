@@ -1,6 +1,5 @@
 package com.zube.myfancypdfinvoices.service;
 
-import com.zube.myfancypdfinvoices.context.Application;
 import com.zube.myfancypdfinvoices.model.Invoice;
 import com.zube.myfancypdfinvoices.model.User;
 
