@@ -20,8 +20,8 @@ public class MyFancyPdfInvoicesApplicationConfiguration {
         return new UserService();
     }
 
-    public InvoiceService invoiceService(UserService userService) {
-        return new InvoiceService(userService);
+    public InvoiceService invoiceService() {
+        return new InvoiceService();
     }
 
     @Bean
