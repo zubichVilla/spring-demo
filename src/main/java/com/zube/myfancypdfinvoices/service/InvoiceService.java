@@ -2,6 +2,7 @@ package com.zube.myfancypdfinvoices.service;
 
 import com.zube.myfancypdfinvoices.model.Invoice;
 import com.zube.myfancypdfinvoices.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @Component
 public class InvoiceService {
 
-    private final UserService userService;
+    private UserService userService;
 
     List<Invoice> invoices = new CopyOnWriteArrayList<>(); //
 
@@ -19,9 +20,6 @@ public class InvoiceService {
         return invoices;
     }
 
-    public InvoiceService(UserService userService){
-        this.userService = userService;
-    }
 
     public Invoice create(String userId, Integer amount){
 
@@ -35,5 +33,10 @@ public class InvoiceService {
         invoices.add(invoice);
 
         return invoice;
+    }
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 }
