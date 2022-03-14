@@ -14,16 +14,6 @@ import org.springframework.context.annotation.Scope;
 @ComponentScan(basePackageClasses = ApplicationLauncher.class)
 public class MyFancyPdfInvoicesApplicationConfiguration {
 
-    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-
-    public UserService userService(){
-        return new UserService();
-    }
-
-    public InvoiceService invoiceService() {
-        return new InvoiceService();
-    }
-
     @Bean
     public ObjectMapper objectMapper() {
         return new ObjectMapper();
