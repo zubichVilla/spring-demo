@@ -4,12 +4,24 @@ import com.zube.myfancypdfinvoices.model.Invoice;
 import com.zube.myfancypdfinvoices.model.User;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 
 @Component
 public class InvoiceService {
+
+    @PostConstruct
+    public void init(){
+        System.out.println("Fetching PDF templates from S3 ....");
+    }
+
+    @PreDestroy
+    public void shutdown(){
+        System.out.println("Deleting downloaded templates ... ");
+    }
 
     private final UserService userService;
 
