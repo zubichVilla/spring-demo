@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @ComponentScan(basePackageClasses = ApplicationLauncher.class)
 @PropertySource("classpath:/application.properties")
-//@PropertySource("classpath:/someOtherFile.properties")
+@PropertySource(value = "classpath:/application-${spring.profiles.active}.properties", ignoreResourceNotFound = true)
 public class MyFancyPdfInvoicesApplicationConfiguration {
 
     @Bean
