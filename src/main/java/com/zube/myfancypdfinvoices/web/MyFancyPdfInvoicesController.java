@@ -28,8 +28,13 @@ public class MyFancyPdfInvoicesController {
         return invoiceService.findAll();
     }
 
-    @PostMapping("/invoices")
+    /*@PostMapping("/invoices")
     public Invoice createInvoice(@RequestParam("user_id") String userId, @RequestParam Integer amount){
+        return invoiceService.create(userId, amount);
+    }*/
+
+    @PostMapping("/invoices/{userId}/{amount}")
+    public Invoice createInvoice(@PathVariable String userId, @PathVariable Integer amount){
         return invoiceService.create(userId, amount);
     }
 
