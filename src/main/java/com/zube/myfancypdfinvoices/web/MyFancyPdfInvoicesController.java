@@ -1,5 +1,6 @@
 package com.zube.myfancypdfinvoices.web;
 
+import com.zube.myfancypdfinvoices.dto.InvoiceDto;
 import com.zube.myfancypdfinvoices.model.Invoice;
 import com.zube.myfancypdfinvoices.service.InvoiceService;
 import org.springframework.stereotype.Controller;
@@ -28,14 +29,9 @@ public class MyFancyPdfInvoicesController {
         return invoiceService.findAll();
     }
 
-    /*@PostMapping("/invoices")
-    public Invoice createInvoice(@RequestParam("user_id") String userId, @RequestParam Integer amount){
-        return invoiceService.create(userId, amount);
-    }*/
-
-    @PostMapping("/invoices/{userId}/{amount}")
-    public Invoice createInvoice(@PathVariable String userId, @PathVariable Integer amount){
-        return invoiceService.create(userId, amount);
+    @PostMapping("/invoices")
+    public Invoice createInvoice(@RequestBody InvoiceDto invoiceDto){
+        return invoiceService.create(invoiceDto.getUserId(), invoiceDto.getAmount());
     }
 
 }
