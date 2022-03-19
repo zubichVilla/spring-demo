@@ -2,7 +2,6 @@ package com.zube.myfancypdfinvoices.web;
 
 import com.zube.myfancypdfinvoices.model.Invoice;
 import com.zube.myfancypdfinvoices.service.InvoiceService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
