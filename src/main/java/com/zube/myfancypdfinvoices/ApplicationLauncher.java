@@ -1,6 +1,6 @@
 package com.zube.myfancypdfinvoices;
 
-import com.zube.myfancypdfinvoices.context.MyFancyPdfInvoicesApplicationConfiguration;
+import com.zube.myfancypdfinvoices.context.ApplicationConfiguration;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.Wrapper;
@@ -35,7 +35,7 @@ public class ApplicationLauncher {
     public static WebApplicationContext createApplicationContext(ServletContext servletContext) {
 
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
-        ctx.register(MyFancyPdfInvoicesApplicationConfiguration.class);
+        ctx.register(ApplicationConfiguration.class);
         ctx.setServletContext(servletContext);
         ctx.refresh();
         ctx.registerShutdownHook();
