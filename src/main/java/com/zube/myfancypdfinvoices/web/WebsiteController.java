@@ -8,7 +8,7 @@ public class WebsiteController {
 
     @GetMapping("/")
     public String homepage(){
-        return "index.html";
+        return "/index.html";
     }
 
 }
