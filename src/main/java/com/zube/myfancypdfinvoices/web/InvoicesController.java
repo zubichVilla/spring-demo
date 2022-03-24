@@ -20,11 +20,6 @@ public class InvoicesController {
         this.invoiceService = invoiceService;
     }
 
-    @GetMapping("/")
-    public String index(){
-        return "Hello world";
-    }
-
     @GetMapping("/invoices")
     // @RequestMapping(value = "/invoices", method = RequestMethod.GET)
     public List<Invoice> invoices (){
