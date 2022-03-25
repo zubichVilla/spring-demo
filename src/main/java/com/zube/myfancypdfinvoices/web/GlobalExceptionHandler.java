@@ -13,13 +13,13 @@ public class GlobalExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public String handleMethodArgumentNotValid(MethodArgumentNotValidException exception){
-        return "Sorry, that was not quite right: " + exception.getMessage();
+    public String handlemethodArgumentNotValid(MethodArgumentNotValidException exception){
+        return "Sorry, that was not quite right: @Valid Bean Validation error " + exception.getMessage();
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ConstraintViolationException.class)
     public String handleConstraintViolation(ConstraintViolationException exception) { //
-        return "Sorry, that was not quite right: " + exception.getMessage();
+        return "Sorry, that was not quite right: @RequestParams validation error " + exception.getMessage();
     }
 }

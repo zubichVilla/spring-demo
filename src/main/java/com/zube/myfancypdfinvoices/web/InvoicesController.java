@@ -3,6 +3,7 @@ package com.zube.myfancypdfinvoices.web;
 import com.zube.myfancypdfinvoices.dto.InvoiceDto;
 import com.zube.myfancypdfinvoices.model.Invoice;
 import com.zube.myfancypdfinvoices.service.InvoiceService;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@Validated
 public class InvoicesController {
 
     private final InvoiceService invoiceService;
