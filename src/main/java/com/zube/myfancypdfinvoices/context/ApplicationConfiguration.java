@@ -2,6 +2,7 @@ package com.zube.myfancypdfinvoices.context;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zube.myfancypdfinvoices.ApplicationLauncher;
+import org.h2.jdbcx.JdbcDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +12,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+
+import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackageClasses = ApplicationLauncher.class)
@@ -22,6 +25,16 @@ public class ApplicationConfiguration {
     @Bean // <1>
     public MethodValidationPostProcessor methodValidationPostProcessor() {
         return new MethodValidationPostProcessor();
+    }
+
+    @Bean
+    public DataSource dataSource(){
+        JdbcDataSource jdbcDataSource = new JdbcDataSource();
+        jdbcDataSource.setURL("jdbc:h2:~/myFirstH2Database;INIT=RUNSCRIPT FROM 'classpath:schema.sql'");
+        jdbcDataSource.setUser("sa");
+        jdbcDataSource.setPassword("sa");
+
+        return jdbcDataSource;
     }
 
     @Bean
