@@ -27,7 +27,7 @@ public class ApplicationLauncher {
 
         Wrapper servlet = Tomcat.addServlet(tomcatCtx, "dispatcherServlet", dispatcherServlet);
         servlet.setLoadOnStartup(1);
-        servlet.addMapping("/*");//bilo koja putanja
+        servlet.addMapping("/*");
 
         tomcat.start();
     }
